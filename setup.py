@@ -6,10 +6,14 @@
 
 import setuptools
 
+MAJOR = 0
+MINOR = 1
+MICRO = 2
+
 AUTHOR = "Jakrin Juangbhanich"
 EMAIL = "krinj@genvis.co"
 PACKAGE_NAME = "boiler"
-VERSION = "0.1.1"
+VERSION = "{}.{}.{}".format(MAJOR, MINOR, MICRO)
 REPO = "https://github.com/Infrarift/py-cicd-boiler"
 
 setuptools.setup(
