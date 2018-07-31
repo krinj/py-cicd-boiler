@@ -6,8 +6,8 @@ install:
   - pip install codecov
 
 script:
-  # - python -m unittest tests/test_*.py
-  - coverage run boiler/tests/test_*.py
+  - python -m unittest tests/test_*.py
+  # - coverage run boiler/tests/test_*.py
 
 after_success:
   - codecov
