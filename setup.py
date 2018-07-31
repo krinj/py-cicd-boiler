@@ -9,7 +9,7 @@ import setuptools
 AUTHOR = "Jakrin Juangbhanich"
 EMAIL = "krinj@genvis.co"
 PACKAGE_NAME = "boiler"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 REPO = "https://github.com/Infrarift/py-cicd-boiler"
 
 setuptools.setup(
