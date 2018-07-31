@@ -7,7 +7,7 @@ install:
 
 script:
   # - python -m unittest tests/test_*.py
-  - coverage run tests/test_*.py
+  - coverage run boiler/tests/test_*.py
 
 after_success:
   - codecov
