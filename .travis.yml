@@ -8,8 +8,8 @@ install:
 script:
   # - python -m unittest tests/test_*.py
   - coverage run tests/test_*.py
-  - python setup.py sdist
-  - bash ./upload_to_nexus.sh
 
 after_success:
   - codecov
+  - python setup.py sdist
+  - bash ./upload_to_nexus.sh

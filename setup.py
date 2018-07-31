@@ -8,7 +8,7 @@ import setuptools
 
 MAJOR = 0
 MINOR = 1
-MICRO = 3
+MICRO = 4
 
 AUTHOR = "Jakrin Juangbhanich"
 EMAIL = "krinj@genvis.co"
