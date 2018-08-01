@@ -6,7 +6,7 @@
 
 import setuptools
 
-AUTHOR = "Jakrin Juangbhanich"
+AUTHOR = "Jakrin Juangbhanichy"
 EMAIL = "krinj@genvis.co"
 PACKAGE_NAME = "boiler"
 REPO = "https://github.com/Infrarift/py-cicd-boiler"
