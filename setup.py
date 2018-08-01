@@ -11,7 +11,7 @@ EMAIL = "krinj@genvis.co"
 PACKAGE_NAME = "boiler"
 REPO = "https://github.com/Infrarift/py-cicd-boiler"
 
-with open("VERSION", "r") as f:
+with open("support/version", "r") as f:
     VERSION = f.readline()
 
 setuptools.setup(
