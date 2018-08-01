@@ -4,7 +4,7 @@
 """
 Bump the micro-version number of the package.
 """
-
+import os
 
 if __name__ == "__main__":
 
@@ -18,3 +18,4 @@ if __name__ == "__main__":
         f.write(new_version)
 
     print("Bumping Version Number: {} -> {}".format(current_version, new_version))
+    os.system("git add VERSION")
