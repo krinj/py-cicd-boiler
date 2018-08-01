@@ -11,3 +11,7 @@ __email__ = "krinj@genvis.co"
 # Make these accessible at the root namespace.
 from .boiler import Boiler
 from .heater import Heater
+
+with open("version", "r") as f:
+    __version__ = f.readline()
+
