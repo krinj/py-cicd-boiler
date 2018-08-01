@@ -7,8 +7,7 @@ install:
   - pip install coverage
 
 script:
-  - python -m unittest tests/test_*.py
-  - coverage run tests/test_*.py
+  - coverage run -m unittest tests/test_*.py
 
 after_success:
   - codecov
