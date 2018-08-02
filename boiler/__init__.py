@@ -11,6 +11,5 @@ __version__ = "0.0.0"
 
 # Make these accessible at the root namespace.
 from .boiler import Boiler
-from .heater import Heater
 
 
