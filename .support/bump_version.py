@@ -5,6 +5,7 @@
 Bump the micro-version number of the package.
 """
 import os
+import re
 
 if __name__ == "__main__":
 
@@ -18,4 +19,16 @@ if __name__ == "__main__":
         f.write(new_version)
 
     print("Bumping Version Number: {} -> {}".format(current_version, new_version))
+
+    # Also apply the new version to the README.md.
+    with open("README.md", "r") as f:
+        lines = f.readlines()
+
+    p = re.compile("!\[Build Version\]\(.*\)")
+    with open("README.md", "w") as f:
+        for line in lines:
+            line = re.sub(p, "![Version](https://img.shields.io/badge/version-{}-blue.png)".format(new_version), line)
+            f.write(line)
+
     os.system("git add version")
+    os.system("git add README.md")
