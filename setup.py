@@ -11,8 +11,20 @@ EMAIL = "krinj@genvis.co"
 PACKAGE_NAME = "boiler"
 REPO = "https://github.com/Infrarift/py-cicd-boiler"
 
+
 with open("version", "r") as f:
     VERSION = f.readline()
+
+
+def find_packages_under(path):
+    all_packages = setuptools.find_packages()
+    packages = []
+    for package in all_packages:
+        package_split = package.split(".")
+        if package_split[0] == path:
+            packages.append(package)
+    return packages
+
 
 setuptools.setup(
     author=AUTHOR,
@@ -20,13 +32,8 @@ setuptools.setup(
     name=PACKAGE_NAME,
     version=VERSION,
     url=REPO,
-    packages=[PACKAGE_NAME],
-    # test_suite='nose.collector',
-    # tests_require=['nose'],
-    # add the dependencies of the package here
-    install_requires=[
-        # 'numpy==1.14.5',
-    ],
+    packages=find_packages_under(PACKAGE_NAME),
+    install_requires=[],
 )
 
 with open("upload_to_nexus.sh", 'w') as f:
