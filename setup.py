@@ -44,7 +44,7 @@ def copy_version_to_package(path):
             if "__version__" not in line:
                 new_file.write(line)
             else:
-                new_file.write("__version__ = \"{}\"".format(VERSION))
+                new_file.write("__version__ = \"{}\"\n".format(VERSION))
 
 
 copy_version_to_package(PACKAGE_NAME)
