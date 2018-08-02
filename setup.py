@@ -20,9 +20,9 @@ setuptools.setup(
     name=PACKAGE_NAME,
     version=VERSION,
     url=REPO,
-    packages=setuptools.find_packages(),
-    test_suite='nose.collector',
-    tests_require=['nose'],
+    packages=[PACKAGE_NAME],
+    # test_suite='nose.collector',
+    # tests_require=['nose'],
     # add the dependencies of the package here
     install_requires=[
         # 'numpy==1.14.5',
