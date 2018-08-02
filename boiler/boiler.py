@@ -17,3 +17,6 @@ class Boiler:
     def boil(value: int) -> int:
         print("Boiling: {}".format(value))
         return value * 2
+
+    def do_stuff(self):
+        return None
