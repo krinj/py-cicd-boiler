@@ -47,7 +47,7 @@ def copy_version_to_package(path):
                 new_file.write("__version__ = \"{}\"".format(VERSION))
 
 
-copy_version_to_package(VERSION)
+copy_version_to_package(PACKAGE_NAME)
 
 setuptools.setup(
     author=AUTHOR,
