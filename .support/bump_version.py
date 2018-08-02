@@ -24,7 +24,7 @@ if __name__ == "__main__":
     with open("README.md", "r") as f:
         lines = f.readlines()
 
-    p = re.compile("!\[Build Version\]\(.*\)")
+    p = re.compile("!\[Version\]\(.*\)")
     with open("README.md", "w") as f:
         for line in lines:
             line = re.sub(p, "![Version](https://img.shields.io/badge/version-{}-333333.svg)".format(new_version), line)
