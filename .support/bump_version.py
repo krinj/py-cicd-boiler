@@ -27,7 +27,7 @@ if __name__ == "__main__":
     p = re.compile("!\[Build Version\]\(.*\)")
     with open("README.md", "w") as f:
         for line in lines:
-            line = re.sub(p, "![Version](https://img.shields.io/badge/version-{}-blue.png)".format(new_version), line)
+            line = re.sub(p, "![Version](https://img.shields.io/badge/version-{}-333333.svg)".format(new_version), line)
             f.write(line)
 
     os.system("git add version")
