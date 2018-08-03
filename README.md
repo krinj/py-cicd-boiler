@@ -1,5 +1,5 @@
 # Python CI-CD Boiler Plate Project
-[![Build Status](https://travis-ci.org/Infrarift/py-cicd-boiler.svg?branch=master)](https://travis-ci.org/Infrarift/py-cicd-boiler) [![codecov](https://codecov.io/gh/Infrarift/py-cicd-boiler/branch/master/graph/badge.svg)](https://codecov.io/gh/Infrarift/py-cicd-boiler) ![Version](https://img.shields.io/badge/version-0.3.32-333333.svg)
+[![Build Status](https://travis-ci.org/Infrarift/py-cicd-boiler.svg?branch=master)](https://travis-ci.org/Infrarift/py-cicd-boiler) [![codecov](https://codecov.io/gh/Infrarift/py-cicd-boiler/branch/master/graph/badge.svg)](https://codecov.io/gh/Infrarift/py-cicd-boiler) ![Version](https://img.shields.io/badge/version-0.3.34-333333.svg)
 
 This is a boiler plate project for Python packages. It includes a minimal example package, and some support scripts for making developing and updating it easier.
 
@@ -51,3 +51,11 @@ packages=["foo", "bar"]
 #### Unit Tests
 
 Unit tests should be named in the format of `test_*.py` and should reside in the `tests` directory. These tests will be run automatically by the Travis service.
+
+In `travis.yml` you must change this line so that the `--source` points to whatever package you are testing coverage for.
+
+```yaml
+script:
+  - coverage run --source {YOUR_PACKAGE} -m unittest tests/test_*.py
+```
+
