@@ -34,7 +34,7 @@ Modify the fields at the top of `setup.py`:
 
 ```python
 AUTHOR = "Jakrin Juangbhanich"
-EMAIL = "krinj@genvis.co"
+EMAIL = "juangbhanich.k@gmail.com"
 PACKAGE_NAME = "boiler"
 DESCRIPTION = "A boiler-plate project for packages."
 REPO = "https://github.com/Infrarift/py-cicd-boiler"
