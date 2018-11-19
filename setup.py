@@ -8,10 +8,10 @@ import setuptools
 # ======================================================================================================================
 
 AUTHOR = "Jakrin Juangbhanich"
-EMAIL = "krinj@genvis.co"
+EMAIL = "juangbhanich.k@gmail.com"
 PACKAGE_NAME = "boiler"
 DESCRIPTION = "A boiler-plate project for packages."
-REPO = "https://github.com/Infrarift/py-cicd-boiler"
+REPO = "https://github.com/krinj/py-cicd-boiler"
 
 # ======================================================================================================================
 # Automatic Package Setup Script.
@@ -63,8 +63,21 @@ setuptools.setup(
     ]
 )
 
-with open("upload_to_nexus.sh", 'w') as f:
-    f.write('#!/usr/bin/env bash\n')
-    f.write('pip install twine\n')
-    f.write('twine upload -r pypi-local --repository-url https://nexus.genvis.co/repository/pypi-local/ '
-            '-u dev -p usainbolt2018 dist/{}-{}.tar.gz\n'.format(PACKAGE_NAME, VERSION))
+# ===================================================================================================
+# Upload to PyPI. Get the user and password from the environment.
+# ===================================================================================================
+
+key_repo_user = "REPO_USER"
+key_repo_pass = "REPO_PASS"
+
+if key_repo_user in os.environ and key_repo_pass in os.environ:
+    repo_user = os.environ[key_repo_user]
+    repo_pass = os.environ[key_repo_pass]
+
+    with open("upload_to_pypi.sh", 'w') as f:
+        f.write('#!/usr/bin/env bash\n')
+        f.write('pip install twine\n')
+        f.write('twine upload -u {} -p {} dist/*\n'.format(repo_user, repo_pass))
+else:
+    raise Exception(f"Environment variables for uploading to PyPI not found: {key_repo_user} and {key_repo_pass}.")
+
